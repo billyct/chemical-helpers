@@ -33,6 +33,9 @@ check `$value` is CAS number
 ### is_ec($value)
 check `$value` is EC number
 
+### month_abbreviation_en($date)
+convert date('M') to the right month abbreviation
+
 ## License
 
 MIT © [billyct](https://xixisys.com)
