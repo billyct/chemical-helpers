@@ -1,5 +1,8 @@
 {
     "name": "billyct/xixi-chemical-helpers",
+    "description": "Chemical helper functions",
+    "keywords": ["chemical", "xixi"],
+    "license": "MIT",
     "authors": [
         {
             "name": "billyct",
