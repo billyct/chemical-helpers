@@ -1,6 +1,7 @@
 <?php
 
-use XiXi\ChemicalHelpers\Substance;
+use XiXi\Helpers\DateTime;
+use XiXi\Helpers\Chemical\Substance;
 
 if (! function_exists('reg_cas')) {
     /**
@@ -46,6 +47,20 @@ if (! function_exists('is_ec')) {
     function is_ec($value)
     {
         return Substance::isEC($value);
+    }
+}
+
+if (! function_exists('month_abbreviation_en')) {
+    /**
+     * replace date to month abbreviation mapping.
+     * reference: http://web.library.yale.edu/cataloging/months.htm
+     *
+     * @param string $date
+     * @return string
+     */
+    function month_abbreviation_en($date)
+    {
+        return DateTime::monthAbbreviationEN($date);
     }
 }
 

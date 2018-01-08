@@ -2,7 +2,8 @@
 
 namespace XiXi\Tests;
 
-use XiXi\ChemicalHelpers\Substance;
+use XiXi\Helpers\DateTime;
+use XiXi\Helpers\Chemical\Substance;
 
 class HelpersTest extends TestCase
 {
@@ -34,5 +35,15 @@ class HelpersTest extends TestCase
         $ec = 'y';
         $this->assertFalse(is_ec($ec));
         $this->assertFalse(is_ec(''));
+    }
+
+    public function test_function_month_abbreviation_en()
+    {
+        $date = date("M", strtotime("2018-01-07"));
+        $date = DateTime::monthAbbreviationEN($date);
+        $this->assertEquals('Jan.', $date);
+
+        $date = DateTime::monthAbbreviationEN('test');
+        $this->assertEquals('test', $date);
     }
 }

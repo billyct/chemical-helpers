@@ -1,7 +1,7 @@
 {
-    "name": "billyct/xixi-chemical-helpers",
-    "description": "Chemical helper functions",
-    "keywords": ["chemical", "xixi"],
+    "name": "billyct/xixi-helpers",
+    "description": "XiXi helper functions contain Chemical etc.",
+    "keywords": ["chemical", "xixi", "abbreviation"],
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "XiXi\\ChemicalHelpers\\": "src/"
+            "XiXi\\Helpers\\": "src/"
         },
         "files": [
             "src/Helpers.php"

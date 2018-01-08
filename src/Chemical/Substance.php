@@ -1,6 +1,6 @@
 <?php
 
-namespace XiXi\ChemicalHelpers;
+namespace XiXi\Helpers\Chemical;
 
 class Substance
 {
