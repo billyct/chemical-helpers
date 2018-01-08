@@ -1,6 +1,6 @@
 # xixi-helpers
 [![Build Status](https://travis-ci.org/billyct/xixi-helpers.svg?branch=master)](https://travis-ci.org/billyct/xixi-helpers)
-> Chemical helper functions
+> XiXi helper functions contain Chemical etc.
 
 ## Install
 ```
