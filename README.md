@@ -1,9 +1,10 @@
-# xixi-chemical-helpers [![Build Status](https://travis-ci.org/billyct/xixi-chemical-helpers.svg?branch=master)](https://travis-ci.org/billyct/xixi-chemical-helpers)
+# xixi-helpers
+[![Build Status](https://travis-ci.org/billyct/xixi-helpers.svg?branch=master)](https://travis-ci.org/billyct/xixi-helpers)
 > Chemical helper functions
 
 ## Install
 ```
-composer require billyct/xixi-chemical-helpers
+composer require billyct/xixi-helpers
 ```
 
 ## Usage
