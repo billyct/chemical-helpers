@@ -1,0 +1,28 @@
+{
+    "name": "billyct/xixi-chemical-helpers",
+    "authors": [
+        {
+            "name": "billyct",
+            "email": "billy_allen@126.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "XiXi\\ChemicalHelpers\\": "src/"
+        },
+        "files": [
+            "src/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "XiXi\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}
