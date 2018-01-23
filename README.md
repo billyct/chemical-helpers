@@ -36,6 +36,22 @@ check `$value` is EC number
 ### month_abbreviation_en($date)
 convert date('M') to the right month abbreviation
 
+### is_none($value)
+check `$value` is safe substance c-l-inventories
+
+### is_no_data_available($value)
+check `$value` is no data available, is same as is_null
+
+### is_hazard($value)
+not is_none and not is_no_data_available
+
+### range_split($value)
+split range string, '12 - 90%' get ['12', '90%']
+
+### str_to_float($value)
+convert string to float, it support negative number, for example: '-9.8%' get -9.8
+
+
 ## License
 
 MIT © [billyct](https://xixisys.com)
