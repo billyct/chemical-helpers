@@ -80,6 +80,7 @@ class HelpersTest extends TestCase
         $this->assertEquals($expected, range_split('12 - 90%'));
         $this->assertEquals($expected, range_split('12 ~ 90%'));
         $this->assertEquals($expected, range_split('12 —— 90%'));
+        $this->assertEquals(['90'], range_split(90));
     }
 
     public function test_function_str_to_float()
@@ -91,4 +92,13 @@ class HelpersTest extends TestCase
         $this->assertEquals($expected, str_to_float('%12.31%'));
     }
 
+    public function test_function_is_dangerous_ph()
+    {
+        $this->assertTrue(is_dangerous_ph(-1));
+        $this->assertTrue(is_dangerous_ph(2));
+        $this->assertTrue(is_dangerous_ph(11.5));
+        $this->assertTrue(is_dangerous_ph(18));
+        $this->assertTrue(is_dangerous_ph('7-18'));
+        $this->assertFalse(is_dangerous_ph(7));
+    }
 }

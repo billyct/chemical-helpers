@@ -2,6 +2,7 @@
 
 use XiXi\Helpers\Str;
 use XiXi\Helpers\DateTime;
+use XiXi\Helpers\Chemical\PH;
 use XiXi\Helpers\Chemical\Substance;
 
 if (! function_exists('reg_cas')) {
@@ -117,5 +118,16 @@ if (! function_exists('str_to_float')) {
     function str_to_float($value)
     {
         return Str::toFloat($value);
+    }
+}
+
+if (! function_exists('is_dangerous_ph')) {
+    /**
+     * @param string $ph
+     * @return bool
+     */
+    function is_dangerous_ph($ph)
+    {
+        return PH::isDangerous($ph);
     }
 }
