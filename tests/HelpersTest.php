@@ -46,4 +46,49 @@ class HelpersTest extends TestCase
         $date = DateTime::monthAbbreviationEN('test');
         $this->assertEquals('test', $date);
     }
+
+    public function test_function_is_none()
+    {
+        $this->assertTrue(is_none('none'));
+        $this->assertTrue(is_none(['none']));
+        $this->assertTrue(is_none(''));
+        $this->assertTrue(is_none([]));
+        $this->assertTrue(is_none(['']));
+        $this->assertFalse(is_none(['xxx']));
+    }
+
+    public function test_function_is_no_data_available()
+    {
+        $this->assertTrue(is_no_data_available(null));
+        $this->assertFalse(is_no_data_available(''));
+    }
+
+    public function test_function_is_hazard()
+    {
+        $this->assertTrue(is_hazard(['xxx']));
+        $this->assertFalse(is_hazard(['']));
+    }
+
+    public function test_function_range_split()
+    {
+        $expected = [
+            '12',
+            '90%',
+        ];
+
+        $this->assertEquals($expected, range_split('12-90%'));
+        $this->assertEquals($expected, range_split('12 - 90%'));
+        $this->assertEquals($expected, range_split('12 ~ 90%'));
+        $this->assertEquals($expected, range_split('12 —— 90%'));
+    }
+
+    public function test_function_str_to_float()
+    {
+        $expected = '12.31';
+
+        $this->assertEquals($expected, str_to_float('12.31%'));
+        $this->assertEquals(-$expected, str_to_float('-12.31%'));
+        $this->assertEquals($expected, str_to_float('%12.31%'));
+    }
+
 }

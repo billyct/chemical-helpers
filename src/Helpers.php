@@ -1,5 +1,6 @@
 <?php
 
+use XiXi\Helpers\Str;
 use XiXi\Helpers\DateTime;
 use XiXi\Helpers\Chemical\Substance;
 
@@ -64,5 +65,57 @@ if (! function_exists('month_abbreviation_en')) {
     }
 }
 
+if (! function_exists('is_none')) {
+    /**
+     * @param mixed $value
+     * @return bool
+     */
+    function is_none($value)
+    {
+        return Substance::isNone($value);
+    }
+}
 
+if (! function_exists('is_no_data_available')) {
+    /**
+     * @param mixed $value
+     * @return bool
+     */
+    function is_no_data_available($value)
+    {
+        return Substance::isNoDataAvailable($value);
+    }
+}
 
+if (! function_exists('is_hazard')) {
+    /**
+     * @param mixed $value
+     * @return bool
+     */
+    function is_hazard($value)
+    {
+        return !Substance::isNoDataAvailable($value) && !Substance::isNone($value);
+    }
+}
+
+if (! function_exists('range_split')) {
+    /**
+     * @param string $value
+     * @return array
+     */
+    function range_split($value)
+    {
+        return Str::rangeSplit($value);
+    }
+}
+
+if (! function_exists('str_to_float')) {
+    /**
+     * @param string $value
+     * @return float
+     */
+    function str_to_float($value)
+    {
+        return Str::toFloat($value);
+    }
+}

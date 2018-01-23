@@ -31,4 +31,29 @@ class Substance
     {
         return boolval(preg_match(static::$REG_EC, $value));
     }
+
+    /**
+     * @param string $value
+     * @return bool
+     */
+    public static function isNone($value)
+    {
+        return in_array($value, [
+            'none',
+            ['none'],
+            [''],
+            [],
+            ''
+        ]);
+    }
+
+    /**
+     * @param string $value
+     * @return bool
+     */
+    public static function isNoDataAvailable($value)
+    {
+        return is_null($value);
+    }
+
 }

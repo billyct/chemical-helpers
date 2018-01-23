@@ -2,11 +2,6 @@
 
 namespace XiXi\Helpers;
 
-/**
- * Class DateTime
- *
- * @package \XiXi\Helpers
- */
 class DateTime
 {
     public static $ABBREVIATIONS_OF_MONTHS_EN = [
