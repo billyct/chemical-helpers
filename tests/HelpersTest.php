@@ -101,4 +101,10 @@ class HelpersTest extends TestCase
         $this->assertTrue(is_dangerous_ph('7-18'));
         $this->assertFalse(is_dangerous_ph(7));
     }
+
+    public function test_function_rate()
+    {
+        $this->assertTrue(is_float(rate('EUR', 'CNY')));
+        $this->assertTrue(is_float(rate('USD', 'CNY')));
+    }
 }

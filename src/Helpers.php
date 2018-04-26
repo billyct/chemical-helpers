@@ -1,6 +1,7 @@
 <?php
 
 use XiXi\Helpers\Str;
+use XiXi\Helpers\Currency;
 use XiXi\Helpers\DateTime;
 use XiXi\Helpers\Chemical\PH;
 use XiXi\Helpers\Chemical\Substance;
@@ -129,5 +130,17 @@ if (! function_exists('is_dangerous_ph')) {
     function is_dangerous_ph($ph)
     {
         return PH::isDangerous($ph);
+    }
+}
+
+if (! function_exists('rate')) {
+    /**
+     * @param string $from
+     * @param string $to
+     * @return float
+     */
+    function rate($from, $to)
+    {
+        return Currency::rate($from, $to);
     }
 }

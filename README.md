@@ -54,6 +54,9 @@ convert string to float, it support negative number, for example: '-9.8%' get -9
 ### is_dangerous_ph($pH)
 check the pH value is dangerous pH
 
+### rate($from, $to)
+get the currency rate from fixer.io, example: rate('EUR', 'CNY')
+
 
 ## License
 
