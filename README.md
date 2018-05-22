@@ -57,6 +57,9 @@ check the pH value is dangerous pH
 ### rate($from, $to)
 get the currency rate from fixer.io, example: rate('EUR', 'CNY')
 
+### is_wechat_browser($request)
+check the Illuminate\Http\Request object is from wechat browser.
+
 
 ## License
 
