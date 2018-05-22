@@ -104,7 +104,25 @@ class HelpersTest extends TestCase
 
     public function test_function_rate()
     {
-        $this->assertTrue(is_float(rate('EUR', 'CNY')));
-        $this->assertTrue(is_float(rate('USD', 'CNY')));
+        $mocked = \Mockery::mock('alias:\XiXi\Helpers\Currency');
+        $mocked->shouldReceive('rate')->with('EUR', 'CNY')->andReturn(1);
+        $mocked->shouldReceive('rate')->with('USD', 'CNY')->andReturn(2);
+        $this->assertEquals(1, rate('EUR', 'CNY'));
+        $this->assertEquals(2, rate('USD', 'CNY'));
+    }
+
+    public function test_is_wechat_browser()
+    {
+        $request = \Mockery::mock(\Illuminate\Http\Request::class);
+        $request->shouldReceive('header')
+            ->with('user_agent')
+            ->andReturn('');
+        $this->assertFalse(is_wechat_browser($request));
+
+        $request = \Mockery::mock(\Illuminate\Http\Request::class);
+        $request->shouldReceive('header')
+            ->with('user_agent')
+            ->andReturn('sdlfjklasdflasf MicroMessenger asdfklaskldfas');
+        $this->assertTrue(is_wechat_browser($request));
     }
 }

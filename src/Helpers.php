@@ -1,6 +1,7 @@
 <?php
 
 use XiXi\Helpers\Str;
+use XiXi\Helpers\Browser;
 use XiXi\Helpers\Currency;
 use XiXi\Helpers\DateTime;
 use XiXi\Helpers\Chemical\PH;
@@ -142,5 +143,16 @@ if (! function_exists('rate')) {
     function rate($from, $to)
     {
         return Currency::rate($from, $to);
+    }
+}
+
+if (! function_exists('is_wechat_browser')) {
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return bool
+     */
+    function is_wechat_browser($request)
+    {
+        return Browser::isWechatBrowser($request);
     }
 }
