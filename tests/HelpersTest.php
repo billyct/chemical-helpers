@@ -100,6 +100,7 @@ class HelpersTest extends TestCase
         $this->assertTrue(is_dangerous_ph(18));
         $this->assertTrue(is_dangerous_ph('7-18'));
         $this->assertFalse(is_dangerous_ph(7));
+        $this->assertFalse(is_dangerous_ph('6.0 - 8.0'));
     }
 
     public function test_function_rate()
